@@ -63,4 +63,53 @@ Retrieves the asset balance of a specified blockchain address.
 ```
 
 
+### GetVersion
+
+**Description**：
+
+Retrieves version information of the client, network protocol, database, and configuration.
+
+**Request**：
+
+* id       Unique request identifier
+* jsonRpc  JSON-RPC version
+
+**Response**：
+
+* id                Unique request identifier
+* jsonRpc           JSON-RPC version
+* method            Name of the called method of the called method
+* result            Version details:
+  * code            Status code    
+    -  0  	        Success
+  * message         Human-readable status message
+  * clientVersion   Client software version
+  * netVersion      Network protocol version
+  * configVersion   Configuration schema version 
+  * dbVersion       Database schema version
+
+**example**:
+
+```json
+//req
+{
+    "id":"1",
+    "jsonRpc":"2.0",
+}
+//ack
+{
+    "id": "1",
+    "jsonrpc": "",
+    "method": "GetVersion",
+    "result": {
+        "clientVersion": "1_0.0.1_d",
+        "code": 0,
+        "configVersion": "1.0.0",
+        "dbVersion": "1_0.0.1_d",
+        "message": "success",
+        "netVersion": "0.0"
+    }
+}
+
+```
 continue
