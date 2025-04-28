@@ -112,4 +112,51 @@ Retrieves version information of the client, network protocol, database, and con
 }
 
 ```
-continue
+
+
+### GetChainId
+
+**Description**：
+
+Return chain ID
+
+**Request**：
+
+* id           Unique request identifier
+* jsonRpc      JSON-RPC version
+
+  
+
+**Response**：
+
+* id           Unique request identifier
+* jsonRpc      JSON-RPC version
+* method       Name of the called method of the called method
+* result       Return information
+  * code       Status code: 
+    -  0  	   Success
+  * message    Human-readable status message
+  * chainId    Chain ID
+
+**example**:
+
+```json
+//req
+{
+    "id":"1",
+    "jsonRpc":"2.0",
+}
+//ack
+{
+  "id": "1",
+  "jsonRpc": "2.0",
+  "method": "GetChainId",
+  "result": {
+    "chainId": "0x1080c0ce",
+    "code": 0,
+    "message": "success"
+  }
+}
+```
+
+
