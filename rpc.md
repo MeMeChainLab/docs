@@ -112,6 +112,55 @@ Retrieves version information of the client, network protocol, database, and con
 }
 
 ```
+### GetAccounts
+
+**Description**：
+
+Returns a list of addresses owned by the client
+
+**Request**：
+
+* id       Unique request identifier
+* jsonRpc  JSON-RPC version
+
+**Response**：
+
+* id              Unique request identifier
+* jsonRpc         JSON-RPC version
+* method          Name of the called method of the called method
+* result          Return information
+  * code          Status code: 
+    - 0  	        Success
+  * message       Human-readable status message
+  * acccountList  List of addresses owned by the client
+
+**example**: 
+
+```json
+//req
+{
+    "id":"1",
+    "jsonRpc":"2.0",
+}
+//ack
+{
+  "id": "1",
+  "jsonRpc": "2.0",
+  "method": "GetAccounts",
+  "result": {
+    "acccountLists": [
+      "0x6a72ad3e9762d67D45a311954CdC6ad4693203a9",
+      "0x87dE53fdC1e5AA53eB9Cb839C2EF664Cab0f4C01",
+      "0x9d394DFB4475Eaef15A27396568e5028f13C3F85",
+      "0xD4c60A4866BeE49e0642feC293ee8560C237b758",
+      "0xf535227CCA5487776e666374c839de8b7005892B"
+    ],
+    "code": 0,
+    "message": "success"
+  }
+}
+```
+
 
 
 ### GetChainId
