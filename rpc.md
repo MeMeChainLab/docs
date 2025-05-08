@@ -63,6 +63,53 @@ Retrieves the asset balance of a specified blockchain address.
 ```
 
 
+
+### GetBlockHeight
+
+**Description**：
+
+Retrieves the current height of the blockchain (latest confirmed block number).
+
+**Request**：
+
+* id       Unique request identifier
+* jsonRpc  JSON-RPC version
+
+**Response**：
+
+* id          Unique request identifier
+* jsonRpc     JSON-RPC version
+* method      Echoes the Name of the called method
+* result      Result payload:
+  * code      Status code:
+    -  0      Success
+    -  -1     GetBlockTop error
+  * message   Human-readable status message
+  * top       Latest block height 
+
+**example**:
+
+```json
+//req
+{
+    "id":"1",
+    "jsonRpc":"2.0",
+}
+//ack
+{
+  "id": "1",
+  "jsonRpc": "2.0",
+  "method": "GetBlockHeight",
+  "result": {
+    "code": 0,
+    "message": "success",
+    "height": "590"
+  }
+}
+```
+
+
+
 ### GetVersion
 
 **Description**：
