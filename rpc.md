@@ -158,6 +158,54 @@ Retrieves version information of the client, network protocol, database, and con
     }
 }
 
+
+
+### GetBlockTransactionCountByHash
+
+**Description**：
+
+Returns the number of transactions in a block that matches the hash of a given block
+
+**Request**：
+
+* id            Unique request identifier
+* jsonRpc       JSON-RPC version
+* params        Parameters:
+  * blockHash   Block hash
+
+**Response**：
+
+* id            Unique request identifier
+* jsonRpc       JSON-RPC version
+* method        Name of the called method of the called method
+* result        Return information
+  * code        Status code
+    *   0  	    Success
+    *  -1       GetBlockByBlockHash error
+    *  -2       block parse string fail
+  * message     Human-readable status message
+  * txCount     Number of transactions in the block for a specified block hash
+
+**example**:
+
+```json
+//req
+{
+    "id":"1",
+    "jsonRpc":"2.0",
+    "params":{"blockHash":"0x12e52383dc0fedc40bdab13fc1afd851d7123facf030f90163c03f87411650f1"}
+}
+//ack
+{
+  "id": "1",
+  "jsonRpc": "2.0",
+  "method": "GetBlockTransactionCountByHash",
+  "result": {
+    "code": 0,
+    "message": "success",
+    "txCount": "1"
+  }
+}
 ```
 ### GetAccounts
 
